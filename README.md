@@ -1,5 +1,5 @@
 # google_selenium
-This is a test suite cover some basic features of google search engine. It follows Page-Object design pattern.
+This is a test suite cover some basic features of google search engine and it follows the Page-Object design pattern.
 
 ## TravisCI integration:
 As part of a project, It is integrated with TravisCI and here is the last result of executing the test suite.

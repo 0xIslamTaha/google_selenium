@@ -20,6 +20,7 @@ install:
   - pip3 install -r $TRAVIS_BUILD_DIR/requirements.txt
 
 script:
+  - export PYTHONPATH='./'
   - xvfb-run -a nosetests-3.4 -vs --nologcapture $TRAVIS_BUILD_DIR/testcases --tc-file=$TRAVIS_BUILD_DIR/config.ini
 
 
