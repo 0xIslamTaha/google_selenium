@@ -2,7 +2,7 @@
 This is a test suite cover some basic features of google search engine and it follows the Page-Object design pattern.
 
 ## TravisCI integration:
-As part of a project, It is integrated with TravisCI and here is the last result of executing the test suite.
+As part of a project, It is integrated with TravisCI and here is the last [result](https://travis-ci.org/0xIslamTaha/google_selenium/builds/561453262) of executing the test suite.
 
 ## Test Suite Structure:
 ```bash
