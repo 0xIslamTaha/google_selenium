@@ -11,8 +11,13 @@ jobs:
       - uses: actions/checkout@master
       - name: Install dependencies
         run:  pip3 install -r requirements.txt
-
       - run: export PYTHONPATH='$PYTHONPATH:./'
-      - run: which nosetests3
-      - run: xvfb-run --help
-      - run: xvfb-run -a nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases
+      - run: |
+          pwd
+          sudo apt install -y fd-find
+          sudo fdfind nose /
+          sudo fdfind nosetests /
+
+
+#      - run: xvfb-run --help
+#      - run: xvfb-run -a nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases
