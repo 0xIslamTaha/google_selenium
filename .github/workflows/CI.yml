@@ -11,12 +11,6 @@ jobs:
       - uses: actions/checkout@master
       - name: Install dependencies
         run:  pip3 install -r requirements.txt
-      - run: export PYTHONPATH='$PYTHONPATH:./'
-      - run: wget https://github.com/sharkdp/fd/releases/download/v8.1.1/fd_8.1.1_amd64.deb -O fd_8.1.1_amd64.deb && sudo dpkg -i fd_8.1.1_amd64.deb
-      - run: pwd
-      - run: fd nose /
-      - run: fd nosetests /
-      - run: ls ~/.local/bin | grep nose
-
-#      - run: xvfb-run --help
-#      - run: xvfb-run -a nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases
+      - run: |
+          export PYTHONPATH='$PYTHONPATH:./'
+          xvfb-run -a ~/.local/bin/nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases
