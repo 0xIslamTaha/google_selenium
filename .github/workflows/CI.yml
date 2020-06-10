@@ -12,11 +12,10 @@ jobs:
       - name: Install dependencies
         run:  pip3 install -r requirements.txt
       - run: export PYTHONPATH='$PYTHONPATH:./'
-      - run: |
-          pwd
-          sudo apt install -y fd-find
-          sudo fdfind nose /
-          sudo fdfind nosetests /
+      - run: sudo apt-get install -y fd-find
+      - run: pwd
+      - run: fdfind nose /
+      - run: fdfind nosetests /
 
 
 #      - run: xvfb-run --help
