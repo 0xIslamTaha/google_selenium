@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test_pull_request:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@master
+      - name: Install dependencies
+        run:  pip3 install -r requirements.txt
+      - name: Execute test case
+        run: |
+          export PYTHONPATH='$PYTHONPATH:./'
+          script -e -c $'xvfb-run -a ~/.local/bin/nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases'
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
