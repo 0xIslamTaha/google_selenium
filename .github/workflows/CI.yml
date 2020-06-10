@@ -14,7 +14,7 @@ jobs:
       - name: Execute test case
         run: |
           export PYTHONPATH='$PYTHONPATH:./'
-          xvfb-run -a ~/.local/bin/nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases
+          script -e -c $'xvfb-run -a ~/.local/bin/nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases'
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
