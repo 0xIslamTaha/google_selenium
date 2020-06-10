@@ -12,9 +12,9 @@ jobs:
       - name: Install dependencies
         run:  pip3 install -r requirements.txt
       - name: Run test cases
-        - run: export PYTHONPATH='$PYTHONPATH:./'
-        - run: which nosetests-3.4
-        - run: which nosetests
-        - run: which nosetests3
-        - run: xvfb-run --help
-        - run: xvfb-run -a nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases
+      - run: export PYTHONPATH='$PYTHONPATH:./'
+      - run: which nosetests-3.4
+      - run: which nosetests
+      - run: which nosetests3
+      - run: xvfb-run --help
+      - run: xvfb-run -a nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases
