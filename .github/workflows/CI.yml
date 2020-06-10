@@ -16,4 +16,8 @@ jobs:
       - name: Run test cases
         run: |
           export PYTHONPATH='$PYTHONPATH:./'
+          which nosetests-3.4
+          which nosetests
+          which nosetests3
+          xvfb-run --help
           xvfb-run -a nosetests-3.4 -vs --nologcapture --tc-file=config.ini testcases
